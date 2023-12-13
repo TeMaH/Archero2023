@@ -4,8 +4,10 @@ public class PlayerShoot : MonoBehaviour
 {
     public float SearchRadius;
     public GameObject bullet;
+    public float ShootingRate;
 
     private GameObject enemy;
+    private float time;
 
     private void FixedUpdate()
     {
@@ -35,9 +37,11 @@ public class PlayerShoot : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        time += Time.deltaTime;
+        if (time > ShootingRate)
         {
             Shoot();
+            time -= ShootingRate;
         }
     }
 }

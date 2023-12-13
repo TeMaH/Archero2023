@@ -179,3 +179,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SearchRadius: 5
   bullet: {fileID: 5917778200430855553, guid: e144b6f72fd90440c8f4e387cbffe3ac, type: 3}
+  ShootingRate: 2
