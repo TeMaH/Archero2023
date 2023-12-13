@@ -52,5 +52,6 @@ public class DamageSystem : MonoBehaviour
     private void OnDestroy()
     {
         damagable.Death -= OnDamagableDeath;
+        StopAllCoroutines();
     }
 }
