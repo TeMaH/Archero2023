@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
-   
     public string nextLevel;
 
     private void Start()
     {
-        gameObject.SetActive(false);  
+        gameObject.SetActive(false);
     }
+
     private void ActivateTeleport()
     {
         gameObject.SetActive(true);
@@ -20,6 +20,9 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(nextLevel);
+        if (other.GetComponent<BasePlayer>() != null)
+        {
+            SceneManager.LoadScene(nextLevel);
+        }
     }
 }
