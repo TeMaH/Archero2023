@@ -493,6 +493,7 @@ MonoBehaviour:
   - {fileID: 1542731210}
   - {fileID: 2093657764}
   SceneToLoad: MainMenu
+  Player: {fileID: 2136201744}
 --- !u!1 &327591523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,6 +1265,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joystick: {fileID: 615292427}
   movementComponent: {fileID: 419772625}
+--- !u!114 &2136201744 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5762451066164737368, guid: c584dfb1bdb9f4a518413b94678577f1, type: 3}
+  m_PrefabInstance: {fileID: 2136201741}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136201742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35c30e6d36eb1479ca49feb2ad56b444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7456408833801831538
 PrefabInstance:
   m_ObjectHideFlags: 0
