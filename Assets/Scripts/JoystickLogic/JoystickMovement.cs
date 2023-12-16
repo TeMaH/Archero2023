@@ -6,10 +6,15 @@ using UnityEngine.InputSystem;
 public class JoystickMovement : MonoBehaviour
 {
     [SerializeField] Joystick joystick;
+    [SerializeField] MovementComponent movementComponent;
 
-    void JoysticMove(float inputHorizontal, float inputVertical)
+    private void Update()
     {
-        inputHorizontal = joystick.Horizontal;
-        inputVertical = joystick.Vertical;
+
+        float inputHorizontal = joystick.Horizontal;
+        float inputVertical = joystick.Vertical;
+
+        Vector3 movement = new Vector3(inputHorizontal, 0, inputVertical);
+        movementComponent.Move(movement);
     }
 }
