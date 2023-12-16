@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5762451066164737368}
   - component: {fileID: 1629960436537972725}
   - component: {fileID: 5916193690309348553}
+  - component: {fileID: 2891906797440010098}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -180,3 +181,22 @@ MonoBehaviour:
   SearchRadius: 5
   bullet: {fileID: 5917778200430855553, guid: e144b6f72fd90440c8f4e387cbffe3ac, type: 3}
   ShootingRate: 2
+--- !u!114 &2891906797440010098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401480171845282026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e97f45459818d4847b7c3cf89d8b51bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smallDistance: 3
+  bigDistance: 5
+  SearchRadius: 15
+  closestObj: {fileID: 0}
+  player: {fileID: 0}
+  enemies: []
+  targets: []
