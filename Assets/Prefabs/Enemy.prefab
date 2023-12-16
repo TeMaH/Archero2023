@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   characterController: {fileID: 1024519177560149439}
-  gravity: 0
+  gravity: -9.81
 --- !u!114 &161581619301435885
 MonoBehaviour:
   m_ObjectHideFlags: 0
