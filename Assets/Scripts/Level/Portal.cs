@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,7 +10,7 @@ public class Portal : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void ActivateTeleport()
+    public void ActivateTeleport()
     {
         gameObject.SetActive(true);
     }

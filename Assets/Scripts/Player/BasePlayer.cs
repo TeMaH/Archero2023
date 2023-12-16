@@ -6,7 +6,11 @@ public class BasePlayer : MonoBehaviour
     private PlayerInput input;
     public MovementComponent movementComponent;
     private Vector3 movement;
-
+    public Animator animator;
+    public Animator CharacterAnimator
+    {
+        get { return animator = animator ?? GetComponent<Animator>(); }
+    }
     private void Start()
     {
         input = new PlayerInput();
@@ -18,10 +22,12 @@ public class BasePlayer : MonoBehaviour
     private void Move_canceled(InputAction.CallbackContext context)
     {
         movement = Vector3.zero;
+        
     }
 
     private void Move_performed(InputAction.CallbackContext context)
     {
+        CharacterAnimator.SetTrigger("Run");
         Vector2 inputValue = context.ReadValue<Vector2>();
         movement = new Vector3(inputValue.x, 0, inputValue.y);
     }

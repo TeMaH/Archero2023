@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c30e6d36eb1479ca49feb2ad56b444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementComponent: {fileID: 1629960436537972725}
+  movementComponent: {fileID: 0}
 --- !u!114 &1629960436537972725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   characterController: {fileID: 2226176034682629582}
-  gravity: 0
+  gravity: -9.81
 --- !u!114 &5916193690309348553
 MonoBehaviour:
   m_ObjectHideFlags: 0

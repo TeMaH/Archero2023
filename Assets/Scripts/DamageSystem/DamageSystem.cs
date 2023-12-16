@@ -16,12 +16,12 @@ public class DamageSystem : MonoBehaviour
             if (other.GetComponent<HealthSystem>())
             {
                 damagable = other.GetComponent<HealthSystem>();
-                damagable.Death += OnDamagableDeath;
 
                 damagable.GetDamage(DamageAmmount);
 
                 if (DamagePeriod > 0)
                 {
+                    damagable.Death += OnDamagableDeath;
                     StartCoroutine(TakeDamage());
                 }
             }
@@ -50,8 +50,8 @@ public class DamageSystem : MonoBehaviour
     }
 
     private void OnDestroy()
-    {
-        damagable.Death -= OnDamagableDeath;
+    { 
+        //damagable.Death -= OnDamagableDeath;
         StopAllCoroutines();
     }
 }
