@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class BasePlayer : MonoBehaviour
+public class BasePlayer : MonoBehaviour // DamageableObject
 {
     private PlayerInput input;
     public MovementComponent movementComponent;

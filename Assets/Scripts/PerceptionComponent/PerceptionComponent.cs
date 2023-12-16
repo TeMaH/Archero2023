@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PerceptionComponent : MonoBehaviour
 {
+    public LayerMask EnemyMask;
     public float smallDistance;
     public float bigDistance;
     public float SearchRadius;
@@ -56,6 +57,11 @@ public class PerceptionComponent : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, smallDistance);
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, bigDistance);
+    }
+
+    public DamageableObject GetTarget() 
+    {
+        return null;
     }
 
     public void ClosestTarget()

@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour // DamageableObject
 {
     private MovementComponent mc;
     
