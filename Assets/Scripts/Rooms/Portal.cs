@@ -1,9 +1,9 @@
+using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
-    public string nextLevel;
+    public event Action PlayerInPortal;
 
     private void Start()
     {
@@ -19,7 +19,7 @@ public class Portal : MonoBehaviour
     {
         if (other.GetComponent<BasePlayer>() != null)
         {
-            SceneManager.LoadScene(nextLevel);
+            PlayerInPortal?.Invoke();
         }
     }
 }

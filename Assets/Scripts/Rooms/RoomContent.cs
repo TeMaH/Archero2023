@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class LevelLogic : MonoBehaviour
-{ 
+public class RoomContent : MonoBehaviour
+{
+    public Transform PlayerSpawn;
     public Transform[] EnemySpawnPoints;
-    public GameObject MobPrefab;
+    public Enemy[] MobsPrefab;
     public Portal Teleport;
 
     private int enemiesCount;
@@ -12,10 +13,16 @@ public class LevelLogic : MonoBehaviour
     {
         for (int i = 0; i < EnemySpawnPoints.Length; i++)
         {
-            var enemy = Instantiate(MobPrefab, EnemySpawnPoints[i].position, Quaternion.identity);
+            var enemy = Instantiate(RamdomizeMob(), EnemySpawnPoints[i].position, Quaternion.identity);
             enemiesCount++;
             enemy.GetComponent<HealthSystem>().Death += OnEnemyDeath;
         }
+    }
+
+    private Enemy RamdomizeMob()
+    {
+        var index = Random.Range(0, MobsPrefab.Length - 1);
+        return MobsPrefab[index];
     }
 
     private void OnEnemyDeath()
@@ -23,11 +30,11 @@ public class LevelLogic : MonoBehaviour
         enemiesCount--;
         if (enemiesCount <= 0)
         {
-            LevelComplete();
+            RoomComplete();
         }
     }
 
-    private void LevelComplete()
+    private void RoomComplete()
     {
         Teleport.ActivateTeleport();
     }

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5591624397400621340}
   - component: {fileID: 8528004866193608377}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,10 +141,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0d2440447000b749b3850661fda6166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementTime: 0
+  movementTime: 0.5
   stopTime: 0
-  randMoveDirectionX: 0
-  randMoveDirectionZ: 0
+  randMoveDirectionX: 1
+  randMoveDirectionZ: 1
   randXMin: 0
   randXMax: 0
   randZMin: 0
