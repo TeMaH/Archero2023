@@ -36,7 +36,6 @@ public class BasePlayer : MonoBehaviour
 
     private void Update()
     {
-
         movementComponent.Move(movement);
 
 

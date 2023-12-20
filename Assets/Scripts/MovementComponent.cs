@@ -17,6 +17,7 @@ public class MovementComponent : MonoBehaviour
 
     public void Move(Vector3 movement)
     {
+
         movement.y = gravity;
         Vector3 displacement = movement * speed * Time.deltaTime;
         Controller.Move(displacement);
