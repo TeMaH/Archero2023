@@ -1,3 +1,5 @@
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -27,13 +29,30 @@ public class BasePlayer : MonoBehaviour
 
     private void Move_performed(InputAction.CallbackContext context)
     {
-        CharacterAnimator.SetTrigger("Run");
+       
         Vector2 inputValue = context.ReadValue<Vector2>();
         movement = new Vector3(inputValue.x, 0, inputValue.y);
     }
 
     private void Update()
     {
+
         movementComponent.Move(movement);
+
+
+        if(movement !=  Vector3.zero ) 
+        {
+            CharacterAnimator.SetTrigger("Run");
+        }
+        if (movement == Vector3.zero)
+        {
+            CharacterAnimator.SetTrigger("Idle");
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            CharacterAnimator.SetTrigger("Hit");
+        }
     }
+
 }
