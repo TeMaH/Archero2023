@@ -5,6 +5,7 @@ using Random = UnityEngine.Random;
 public class Enemy : DamageableObject
 {
     private MovementComponent mc;
+    private HealthSystem healthSystem;
     
     [Header("Сколько идет")] public float movementTime = 3f;
     [Header("Сколько стоит")] public float stopTime = 2f;
@@ -26,6 +27,13 @@ public class Enemy : DamageableObject
     void Awake()
     {
         mc = GetComponent<MovementComponent>();
+        healthSystem = GetComponent<HealthSystem>();
+        healthSystem.Death += OnEnemyDeath;
+    }
+
+    private void OnEnemyDeath()
+    {
+        Destroy(gameObject);
     }
 
     protected virtual void Start()
