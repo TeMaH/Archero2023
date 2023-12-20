@@ -701,6 +701,9 @@ GameObject:
   - component: {fileID: 5553598316443235769}
   - component: {fileID: 6059303246367557658}
   - component: {fileID: 3283244865287923321}
+  - component: {fileID: 8648456559183170494}
+  - component: {fileID: 8274843764788332925}
+  - component: {fileID: -3733934416302703427}
   m_Layer: 6
   m_Name: Player 1
   m_TagString: Untagged
@@ -766,7 +769,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 2
-  m_Radius: 0.5
+  m_Radius: 0.4
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -799,9 +802,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d789bde60114b15897c57cca332c8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SearchRadius: 5
   bullet: {fileID: 5917778200430855553, guid: e144b6f72fd90440c8f4e387cbffe3ac, type: 3}
   ShootingRate: 2
+  pc: {fileID: 0}
 --- !u!114 &6059303246367557658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -831,7 +834,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -839,6 +842,69 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &8648456559183170494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6229965956602341278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e97f45459818d4847b7c3cf89d8b51bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 256
+  smallDistance: 3
+  bigDistance: 5
+  SearchRadius: 15
+  closestObj: {fileID: 0}
+  targets: []
+--- !u!114 &8274843764788332925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6229965956602341278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf032ab22f12e4898a2ef822a85c6316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  AutoHealPeriod: -1
+  AutoHealValue: 1
+--- !u!54 &-3733934416302703427
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6229965956602341278}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6854321430959907108
 GameObject:
   m_ObjectHideFlags: 0

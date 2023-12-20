@@ -5,14 +5,12 @@ using UnityEngine;
 
 public class PerceptionComponent : MonoBehaviour
 {
-    public LayerMask PlayerMask;
-    public LayerMask EnemyMask;
+    public LayerMask targetMask;
     public float smallDistance;
     public float bigDistance;
     public float SearchRadius;
     public GameObject closestObj;
     public List<GameObject> targets;
-
     private void Update()
     {
         GetTargets();
@@ -32,20 +30,7 @@ public class PerceptionComponent : MonoBehaviour
 
         for (int i = 0; i < objectsInRadius.Length; i++)
         {
-            if (objectsInRadius[i].GetComponent<Enemy>() &&
-                LayerMask.LayerToName(gameObject.layer).Equals(PlayerMask))
-            {
-                if (targets.Contains(objectsInRadius[i].gameObject))
-                {
-                    continue;
-                }
-
-                targets.Add(objectsInRadius[i].gameObject);
-            }
-
-
-            if (objectsInRadius[i].GetComponent<BasePlayer>() &&
-                LayerMask.LayerToName(gameObject.layer).Equals(EnemyMask))
+            if ((targetMask.value & (1 << objectsInRadius[i].gameObject.layer)) != 0)
             {
                 if (targets.Contains(objectsInRadius[i].gameObject))
                 {
@@ -55,10 +40,31 @@ public class PerceptionComponent : MonoBehaviour
                 targets.Add(objectsInRadius[i].gameObject);
             }
         }
+
+        foreach (var tar in targets)
+        {
+            tar.GetComponent<HealthSystem>().Death += OnDeath;
+        }
+    }
+
+    private void OnDeath(GameObject target)
+    {
+        targets.Remove(target);
+        if (target == closestObj)
+        {
+            closestObj = null;
+        }
+
+        target.GetComponent<HealthSystem>().Death -= OnDeath;
     }
 
     public DamageableObject GetTarget()
     {
+        ClosestTarget();
+        if (closestObj == null)
+        {
+            return null;
+        }
         return closestObj.GetComponent<DamageableObject>();
     }
 

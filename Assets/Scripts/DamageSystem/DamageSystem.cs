@@ -11,6 +11,7 @@ public class DamageSystem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Enter");
         if ((IgnoredLayers.value & (1<<other.gameObject.layer)) == 0)
         {
             if (other.GetComponent<HealthSystem>())
@@ -30,11 +31,14 @@ public class DamageSystem : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        damagable.Death -= OnDamagableDeath;
+        if (damagable)
+        {
+            damagable.Death -= OnDamagableDeath;
+        }
         StopAllCoroutines();
     }
 
-    private void OnDamagableDeath()
+    private void OnDamagableDeath(GameObject gameObject)
     {
         damagable.Death -= OnDamagableDeath;
         StopAllCoroutines();

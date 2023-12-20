@@ -10,7 +10,7 @@ public class HealthSystem : MonoBehaviour
 
     private float time;
 
-    public event Action Death;
+    public event Action <GameObject> Death;
 
     private void Start()
     {
@@ -53,7 +53,7 @@ public class HealthSystem : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            Death?.Invoke();
+            Death?.Invoke(gameObject);
             currentHealth = 0;
             Debug.Log("Death");
         }

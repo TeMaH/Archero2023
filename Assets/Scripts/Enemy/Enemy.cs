@@ -31,7 +31,7 @@ public class Enemy : DamageableObject
         healthSystem.Death += OnEnemyDeath;
     }
 
-    private void OnEnemyDeath()
+    private void OnEnemyDeath(GameObject gameObject)
     {
         Destroy(gameObject);
     }

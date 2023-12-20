@@ -10,6 +10,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/9b/417ae990/Action.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="2ZV22eIF4pFEcIugD0eMzvwFkcG" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -54,10 +57,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="415892">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="415892" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -77,6 +80,7 @@
       <workItem from="1702722129051" duration="249000" />
       <workItem from="1702722411319" duration="6769000" />
       <workItem from="1702730951827" duration="629000" />
+      <workItem from="1703091813303" duration="6752000" />
     </task>
     <servers />
   </component>
@@ -84,6 +88,25 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/DamageSystem/DamageSystem.cs</url>
+          <line>51</line>
+          <properties documentPath="C:\UnityProjects\ArcherHero\Archero2023\Assets\Scripts\DamageSystem\DamageSystem.cs" initialLine="47" containingFunctionPresentation="Method 'TakeDamage'">
+            <startOffsets>
+              <option value="1309" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1344" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.github.evgenys91.machinet.common.dslhistory.DslHistoryState">
     <option name="historyDtoById">
@@ -251,6 +274,32 @@
               <option name="usedFilesPaths">
                 <list>
                   <option value="$PROJECT_DIR$/Assets/Scripts/PerceptionComponent.cs" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
+        <entry key="ec685d">
+          <value>
+            <ChatHistoryModel>
+              <option name="contextFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Components/PerceptionComponent.cs" />
+                  <option value="$PROJECT_DIR$/Assets/Joystick Pack/Examples/Player.mat" />
+                </list>
+              </option>
+              <option name="id" value="ec685d" />
+              <option name="initiateTms" value="1703096068650" />
+              <option name="request" value="как сравнить layer и LayerMsk" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="Для сравнения слоя объекта с `LayerMask` в Unity, вы можете использовать операцию побитового И (`&amp;`). Вот пример, как это можно сделать:&#10;&#10;```csharp&#10;using UnityEngine;&#10;&#10;public class YourScript : MonoBehaviour&#10;{&#10;    public LayerMask targetMask;&#10;&#10;    private void Start()&#10;    {&#10;        int objectLayer = gameObject.layer;&#10;&#10;        if ((targetMask.value &amp; (1 &lt;&lt; objectLayer)) != 0)&#10;        {&#10;            Debug.Log(&quot;Объект находится на слое, указанном в LayerMask&quot;);&#10;        }&#10;        else&#10;        {&#10;            Debug.Log(&quot;Объект не находится на слое, указанном в LayerMask&quot;);&#10;        }&#10;    }&#10;}&#10;```&#10;&#10;В этом примере мы сравниваем слой объекта (`gameObject.layer`) с `LayerMask` (`targetMask`). Мы используем операцию побитового сдвига (`&lt;&lt;`) для создания битовой маски для слоя объекта. Затем мы выполняем операцию побитового И (`&amp;`) между `targetMask.value` и битовой маской слоя объекта.&#10;&#10;Если результат операции побитового И не равен нулю, это означает, что слой объекта присутствует в `LayerMask`. В этом случае мы выводим сообщение &quot;Объект находится на слое, указанном в LayerMask&quot;. В противном случае, если результат равен нулю, мы выводим сообщение &quot;Объект не находится на слое, указанном в LayerMask&quot;.&#10;&#10;Вы можете разместить этот код в вашем скрипте и вызвать его в нужном месте, например, в методе `Start()`. При запуске игры, вы увидите соответствующее сообщение в консоли Unity в зависимости от того, находится ли объект на указанном слое в `LayerMask`." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1703096075138" />
+              <option name="usedFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Components/PerceptionComponent.cs" />
+                  <option value="$PROJECT_DIR$/Assets/Joystick Pack/Examples/Player.mat" />
                 </list>
               </option>
             </ChatHistoryModel>

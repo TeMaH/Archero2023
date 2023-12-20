@@ -25,7 +25,7 @@ public class RoomContent : MonoBehaviour
         return MobsPrefab[index];
     }
 
-    private void OnEnemyDeath()
+    private void OnEnemyDeath(GameObject gameObject)
     {
         enemiesCount--;
         if (enemiesCount <= 0)
