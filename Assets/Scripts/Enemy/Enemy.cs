@@ -6,6 +6,7 @@ public class Enemy : DamageableObject
 {
     private MovementComponent mc;
     private HealthSystem healthSystem;
+    private PerceptionComponent perception;
     
     [Header("Сколько идет")] public float movementTime = 3f;
     [Header("Сколько стоит")] public float stopTime = 2f;
@@ -23,9 +24,11 @@ public class Enemy : DamageableObject
     public int randZMax = 1;
 
     private bool pause = false;
+    private DamageableObject target;
 
     void Awake()
     {
+        perception = GetComponent<PerceptionComponent>();
         mc = GetComponent<MovementComponent>();
         healthSystem = GetComponent<HealthSystem>();
         healthSystem.Death += OnEnemyDeath;
@@ -43,7 +46,13 @@ public class Enemy : DamageableObject
 
     protected void Update()
     {
-        if (!pause)
+        target = perception.GetClosestTarget();
+
+        if (target != null)
+        {
+            mc.Move((target.transform.position - transform.position).normalized);
+        }
+        else if (!pause)
         {
             RandomMovement();
         }
@@ -79,7 +88,6 @@ public class Enemy : DamageableObject
 
     public override HealthSystem GetHealthSystem()
     {
-
         return gameObject.GetComponent<HealthSystem>();
     }
 }
