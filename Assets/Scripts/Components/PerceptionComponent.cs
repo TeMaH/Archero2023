@@ -5,69 +5,65 @@ using UnityEngine;
 
 public class PerceptionComponent : MonoBehaviour
 {
+    public LayerMask PlayerMask;
     public LayerMask EnemyMask;
     public float smallDistance;
     public float bigDistance;
     public float SearchRadius;
     public GameObject closestObj;
-    public GameObject player;
-    public List<GameObject> enemies;
     public List<GameObject> targets;
-
-    private void Start()
-    {
-        var objectsInRadius = Physics.OverlapSphere(transform.position, SearchRadius);
-
-        for (int i = 0; i < objectsInRadius.Length; i++)
-        {
-            if (objectsInRadius[i].GetComponent<Enemy>())
-            {
-                if (enemies.Contains(objectsInRadius[i].gameObject))
-                {
-                    continue;
-                }
-                enemies.Add(objectsInRadius[i].gameObject);
-            }
-
-            if (objectsInRadius[i].GetComponent<BasePlayer>())
-            {
-                player = objectsInRadius[i].gameObject;
-            }
-        }
-        if (LayerMask.LayerToName(gameObject.layer).Equals("Player"))
-        {
-            targets = enemies;
-        }
-        else if(LayerMask.LayerToName(gameObject.layer).Equals("Enemy"))
-        {
-            targets.Add(player);
-        }
-    }
 
     private void Update()
     {
-        ClosestTarget();
-        Debug.Log(closestObj);
+        GetTargets();
     }
 
     private void OnDrawGizmos()
     {
-        // Отрисовка радиуса в гизмосе
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(transform.position, smallDistance);
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, bigDistance);
     }
 
-    public DamageableObject GetTarget() 
+    private void GetTargets()
     {
-        return null;
+        var objectsInRadius = Physics.OverlapSphere(transform.position, SearchRadius);
+
+        for (int i = 0; i < objectsInRadius.Length; i++)
+        {
+            if (objectsInRadius[i].GetComponent<Enemy>() &&
+                LayerMask.LayerToName(gameObject.layer).Equals(PlayerMask))
+            {
+                if (targets.Contains(objectsInRadius[i].gameObject))
+                {
+                    continue;
+                }
+
+                targets.Add(objectsInRadius[i].gameObject);
+            }
+
+
+            if (objectsInRadius[i].GetComponent<BasePlayer>() &&
+                LayerMask.LayerToName(gameObject.layer).Equals(EnemyMask))
+            {
+                if (targets.Contains(objectsInRadius[i].gameObject))
+                {
+                    continue;
+                }
+
+                targets.Add(objectsInRadius[i].gameObject);
+            }
+        }
     }
 
-    public void ClosestTarget()
+    public DamageableObject GetTarget()
     {
-        // List<GameObject> targets = new List<GameObject>();
+        return closestObj.GetComponent<DamageableObject>();
+    }
 
+    private void ClosestTarget()
+    {
         bool inRange = false;
         float closestDistance = Mathf.Infinity;
         foreach (var target in targets)

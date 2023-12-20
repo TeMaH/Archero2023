@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class BasePlayer : MonoBehaviour // DamageableObject
+public class BasePlayer : DamageableObject 
 {
     private PlayerInput input;
     public MovementComponent movementComponent;
@@ -29,5 +29,10 @@ public class BasePlayer : MonoBehaviour // DamageableObject
     private void Update()
     {
         movementComponent.Move(movement);
+    }
+
+    public override HealthSystem GetHealthSystem()
+    {
+        return gameObject.GetComponent<HealthSystem>();
     }
 }

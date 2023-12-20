@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Enemy : MonoBehaviour // DamageableObject
+public class Enemy : DamageableObject
 {
     private MovementComponent mc;
     
@@ -67,5 +67,11 @@ public class Enemy : MonoBehaviour // DamageableObject
 
     protected virtual void OnCollisionEnter(Collision collision)
     {
+    }
+
+    public override HealthSystem GetHealthSystem()
+    {
+
+        return gameObject.GetComponent<HealthSystem>();
     }
 }
