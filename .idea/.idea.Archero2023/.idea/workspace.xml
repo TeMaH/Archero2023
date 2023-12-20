@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="20ca2df0-6464-4994-a486-9b579f8f9358" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,18 +15,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\vasya\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\vasya\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\vasya\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\vasya\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\vasya\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\vasya\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.15f1\Editor\Unity.exe" />
@@ -71,6 +74,9 @@
       <option name="presentableId" value="Default" />
       <updated>1702492724398</updated>
       <workItem from="1702492726381" duration="221000" />
+      <workItem from="1702722129051" duration="249000" />
+      <workItem from="1702722411319" duration="6769000" />
+      <workItem from="1702730951827" duration="629000" />
     </task>
     <servers />
   </component>
@@ -78,5 +84,191 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="com.github.evgenys91.machinet.common.dslhistory.DslHistoryState">
+    <option name="historyDtoById">
+      <map>
+        <entry key="32c41d">
+          <value>
+            <ChatHistoryModel>
+              <option name="contextFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/PerceptionComponent.cs" />
+                </list>
+              </option>
+              <option name="id" value="32c41d" />
+              <option name="initiateTms" value="1702723418030" />
+              <option name="request" value="как отрисовывать радиус в игре?" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="Чтобы отрисовать радиус в игре, вы можете использовать графические примитивы или визуальные эффекты. Вот несколько способов, которые вы можете попробовать:&#10;&#10;1. Использование графических примитивов: Вы можете создать круговую линию или меш, которые будут представлять радиус. Затем вы можете настроить их размер, цвет и положение в соответствии с радиусом, который вы хотите отобразить. Например, вы можете использовать `Debug.DrawLine()` или `Debug.DrawMesh()` для отрисовки радиуса в редакторе Unity или в режиме разработки.&#10;&#10;2. Использование визуальных эффектов: Вы можете создать визуальный эффект, такой как кольцевая аура или свечение, чтобы отобразить радиус. Вы можете использовать систему частиц или шейдеры для создания таких эффектов. Например, вы можете создать кольцевую систему частиц или применить шейдер с эффектом свечения к объекту, чтобы отобразить радиус.&#10;&#10;3. Использование коллайдеров: Если вам нужно не только визуально отобразить радиус, но и взаимодействовать с объектами внутри него, вы можете использовать коллайдеры. Вы можете добавить коллайдер к объекту, который представляет радиус, и использовать методы, такие как `Physics.OverlapSphere()` или `Physics2D.OverlapCircle()`, чтобы определить объекты, находящиеся внутри радиуса.&#10;&#10;Выбор конкретного способа зависит от ваших потребностей и требований игры. Вы можете экспериментировать с различными методами и выбрать тот, который лучше всего подходит для вашей игры." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1702723424320" />
+              <option name="usedFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/PerceptionComponent.cs" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
+        <entry key="332c71">
+          <value>
+            <ChatHistoryModel>
+              <option name="contextFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/PerceptionComponent.cs" />
+                </list>
+              </option>
+              <option name="id" value="332c71" />
+              <option name="initiateTms" value="1702722557310" />
+              <option name="request" value="как найти ближайший объект в радиусе" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="To find the closest object within a radius, you can modify the `ClosestEnemy()` method in the `PerceptionComponent` class. Here's an updated version of the code:&#10;&#10;```csharp&#10;public GameObject ClosestEnemy(float radius)&#10;{&#10;    GameObject closestObj = null;&#10;    float closestDistance = Mathf.Infinity;&#10;&#10;    foreach (var enemy in enemies)&#10;    {&#10;        float distance = Vector3.Distance(transform.position, enemy.transform.position);&#10;        if (distance &lt;= radius &amp;&amp; distance &lt; closestDistance)&#10;        {&#10;            closestObj = enemy;&#10;            closestDistance = distance;&#10;        }&#10;    }&#10;&#10;    return closestObj;&#10;}&#10;```&#10;&#10;In this updated code, we introduce a new parameter `radius` to the `ClosestEnemy()` method. We initialize `closestObj` to `null` and `closestDistance` to `Mathf.Infinity` to keep track of the closest object and its distance.&#10;&#10;Inside the loop, we calculate the distance between the current enemy and the `transform.position` of the `PerceptionComponent` using `Vector3.Distance()`. If the distance is within the specified radius and closer than the previous closest object, we update `closestObj` and `closestDistance`.&#10;&#10;Finally, we return the `closestObj` as the result.&#10;&#10;You can now call the `ClosestEnemy()` method and pass the desired radius to find the closest object within that radius." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1702722561179" />
+              <option name="usedFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/PerceptionComponent.cs" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
+        <entry key="48f219">
+          <value>
+            <ChatHistoryModel>
+              <option name="contextFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/PerceptionComponent.cs" />
+                </list>
+              </option>
+              <option name="id" value="48f219" />
+              <option name="initiateTms" value="1702727158601" />
+              <option name="request" value="как динамически увеличить массив?" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="Для динамического увеличения массива в C#, вы можете использовать класс `List&lt;T&gt;`. Вот пример, как это можно сделать:&#10;&#10;```csharp&#10;using System.Collections.Generic;&#10;&#10;public class YourClass&#10;{&#10;    private List&lt;int&gt; dynamicArray = new List&lt;int&gt;();&#10;&#10;    private void AddElement(int element)&#10;    {&#10;        dynamicArray.Add(element);&#10;    }&#10;}&#10;```&#10;&#10;В этом примере мы создаем экземпляр класса `List&lt;int&gt;` с именем `dynamicArray`. Затем мы можем использовать метод `Add()` для добавления элементов в массив. Метод `Add()` автоматически увеличивает размер массива при необходимости.&#10;&#10;Вы можете вызывать метод `AddElement()` и передавать ему элементы, которые вы хотите добавить в массив. Например:&#10;&#10;```csharp&#10;AddElement(10);&#10;AddElement(20);&#10;AddElement(30);&#10;```&#10;&#10;После вызова этих методов, `dynamicArray` будет содержать `[10, 20, 30]`.&#10;&#10;Вы также можете получить доступ к элементам массива с помощью индексации, например:&#10;&#10;```csharp&#10;int firstElement = dynamicArray[0]; // Получить первый элемент (10)&#10;int secondElement = dynamicArray[1]; // Получить второй элемент (20)&#10;```&#10;&#10;Использование `List&lt;T&gt;` позволяет динамически увеличивать массив по мере необходимости, без необходимости вручную управлять его размером." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1702727167044" />
+              <option name="usedFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/PerceptionComponent.cs" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
+        <entry key="79a354">
+          <value>
+            <ChatHistoryModel>
+              <option name="contextFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/PerceptionComponent.cs" />
+                </list>
+              </option>
+              <option name="id" value="79a354" />
+              <option name="initiateTms" value="1702723440264" />
+              <option name="request" value="как отрисовывать радиус в гизмосе" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="Чтобы отрисовать радиус в гизмосе (Gizmos) в редакторе Unity, вы можете использовать методы `Gizmos.DrawWireSphere()` или `Gizmos.DrawSphere()`. Вот пример, как это можно сделать:&#10;&#10;```csharp&#10;private void OnDrawGizmos()&#10;{&#10;    // Отрисовка радиуса в гизмосе&#10;    Gizmos.color = Color.red;&#10;    Gizmos.DrawWireSphere(transform.position, радиус);&#10;}&#10;```&#10;&#10;В этом примере мы используем метод `OnDrawGizmos()`, который вызывается автоматически в редакторе Unity для отрисовки гизмосов. Внутри этого метода мы устанавливаем цвет гизмоса с помощью `Gizmos.color`, а затем используем `Gizmos.DrawWireSphere()` для отрисовки каркаса сферы с центром в `transform.position` и радиусом `радиус`.&#10;&#10;Вы можете поместить этот код в ваш класс `PerceptionComponent`, и при редактировании сцены в редакторе Unity вы увидите отрисованный радиус в виде каркаса сферы.&#10;&#10;Обратите внимание, что гизмосы не отображаются во время выполнения игры, они предназначены только для визуализации в редакторе Unity." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1702723446575" />
+              <option name="usedFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/PerceptionComponent.cs" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
+        <entry key="bcaa69">
+          <value>
+            <ChatHistoryModel>
+              <option name="contextFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/PerceptionComponent.cs" />
+                </list>
+              </option>
+              <option name="id" value="bcaa69" />
+              <option name="initiateTms" value="1702724116533" />
+              <option name="request" value="как получить все объекты с определенного слоя" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="Чтобы получить все объекты с определенного слоя в Unity, вы можете использовать метод `GameObject.FindObjectsOfType()`. Вот пример, как это можно сделать:&#10;&#10;```csharp&#10;using UnityEngine;&#10;&#10;public class YourScript : MonoBehaviour&#10;{&#10;    public LayerMask targetLayer;&#10;&#10;    private void Start()&#10;    {&#10;        GameObject[] objectsInLayer = GameObject.FindObjectsOfType&lt;GameObject&gt;();&#10;&#10;        foreach (GameObject obj in objectsInLayer)&#10;        {&#10;            if (obj.layer == targetLayer)&#10;            {&#10;                // Обработка найденного объекта&#10;            }&#10;        }&#10;    }&#10;}&#10;```&#10;&#10;В этом примере мы используем метод `GameObject.FindObjectsOfType&lt;GameObject&gt;()`, чтобы получить все объекты в сцене. Затем мы проходимся по каждому объекту и проверяем его слой с помощью свойства `layer`. Если слой объекта совпадает с целевым слоем (`targetLayer`), то вы можете выполнять необходимую обработку для найденного объекта.&#10;&#10;Обратите внимание, что `LayerMask` используется для хранения информации о слоях. Вы можете настроить `targetLayer` в инспекторе Unity, чтобы указать целевой слой, с которым вы хотите работать.&#10;&#10;Этот код можно разместить в вашем скрипте и вызвать в нужном месте, например, в методе `Start()`." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1702724122910" />
+              <option name="usedFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/PerceptionComponent.cs" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
+        <entry key="c486c1">
+          <value>
+            <ChatHistoryModel>
+              <option name="contextFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/PerceptionComponent.cs" />
+                </list>
+              </option>
+              <option name="id" value="c486c1" />
+              <option name="initiateTms" value="1702728348489" />
+              <option name="request" value="как узнать слой объекта" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="Чтобы узнать слой объекта в Unity, вы можете использовать свойство `gameObject.layer`. Вот пример, как это можно сделать:&#10;&#10;```csharp&#10;using UnityEngine;&#10;&#10;public class YourScript : MonoBehaviour&#10;{&#10;    private void Start()&#10;    {&#10;        int layer = gameObject.layer;&#10;        string layerName = LayerMask.LayerToName(layer);&#10;&#10;        Debug.Log(&quot;Layer: &quot; + layerName);&#10;    }&#10;}&#10;```&#10;&#10;В этом примере мы используем свойство `gameObject.layer`, чтобы получить слой текущего объекта. Затем мы используем метод `LayerMask.LayerToName()` для преобразования числового значения слоя в его имя. И, наконец, мы выводим имя слоя в консоль с помощью `Debug.Log()`.&#10;&#10;Вы можете разместить этот код в вашем скрипте и вызвать его в нужном месте, например, в методе `Start()`. При запуске игры, вы увидите имя слоя текущего объекта в консоли Unity.&#10;&#10;Обратите внимание, что слои в Unity представлены числовыми значениями, и их имена могут быть настроены в редакторе Unity." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1702728354728" />
+              <option name="usedFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/PerceptionComponent.cs" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
+        <entry key="c63cf1">
+          <value>
+            <ChatHistoryModel>
+              <option name="contextFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/PerceptionComponent.cs" />
+                </list>
+              </option>
+              <option name="id" value="c63cf1" />
+              <option name="initiateTms" value="1702723247640" />
+              <option name="request" value="переведи на русский" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="Чтобы найти ближайший объект в заданном радиусе, вы можете изменить метод `ClosestEnemy()` в классе `PerceptionComponent`. Вот обновленный код:&#10;&#10;```csharp&#10;public GameObject ClosestEnemy(float радиус)&#10;{&#10;    GameObject ближайшийОбъект = null;&#10;    float ближайшееРасстояние = Mathf.Infinity;&#10;&#10;    foreach (var враг in enemies)&#10;    {&#10;        float расстояние = Vector3.Distance(transform.position, враг.transform.position);&#10;        if (расстояние &lt;= радиус &amp;&amp; расстояние &lt; ближайшееРасстояние)&#10;        {&#10;            ближайшийОбъект = враг;&#10;            ближайшееРасстояние = расстояние;&#10;        }&#10;    }&#10;&#10;    return ближайшийОбъект;&#10;}&#10;```&#10;&#10;В этом обновленном коде мы добавляем новый параметр `радиус` в метод `ClosestEnemy()`. Мы инициализируем `ближайшийОбъект` значением `null` и `ближайшееРасстояние` значением `Mathf.Infinity`, чтобы отслеживать ближайший объект и его расстояние.&#10;&#10;Внутри цикла мы вычисляем расстояние между текущим врагом и `transform.position` компонента `PerceptionComponent` с помощью `Vector3.Distance()`. Если расстояние находится в заданном радиусе и ближе, чем предыдущий ближайший объект, мы обновляем `ближайшийОбъект` и `ближайшееРасстояние`.&#10;&#10;Наконец, мы возвращаем `ближайшийОбъект` в качестве результата.&#10;&#10;Теперь вы можете вызвать метод `ClosestEnemy()` и передать желаемый радиус, чтобы найти ближайший объект в этом радиусе." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1702723253893" />
+              <option name="usedFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/PerceptionComponent.cs" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
+        <entry key="greeting">
+          <value>
+            <ChatHistoryModel>
+              <option name="id" value="greeting" />
+              <option name="initiateTms" value="1702722542613" />
+              <option name="request" value="" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="&#10;Hello, I am Machinet AI - context aware chat, which can help you with your daily programming routine. How can I help?" />
+              <option name="responseTms" value="1702722544389" />
+            </ChatHistoryModel>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
